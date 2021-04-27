@@ -1,23 +1,34 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <my-header></my-header>
+    <my-container>
+      这是我的个人主页
+    </my-container>
+    <my-footer></my-footer>
+    <router-view class="full-screen" />
   </div>
 </template>
 
 <script>
+import myHeader from "./components/Header";
+import myContainer from "./components/Container";
+import myFooter from "./components/Footer";
 export default {
-  name: 'App'
-}
+  name: "App",
+  components: {
+    myHeader,
+    myContainer,
+    myFooter
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background-color: #f4f5f5;
+}
+.full-screen {
+  width: 100%;
+  height: 100%;
 }
 </style>
